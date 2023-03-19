@@ -1,0 +1,48 @@
+<!-- Header and Nav -->
+<%- include ../partials/header.ejs %>
+
+
+<%- include  ../partials/main_nav.ejs %>
+
+    <div id="main-body" class="container-fluid" style="max-width: 100%; text-align: center; margin-bottom: 75px">
+      <main class="container-fluid">
+            <h1 class="display-4" style="text-align: center;"><%= survey.title %></h1>
+            <br>
+    
+            <div id="main-body" class="container-fluid" style="max-width: 80%; text-align: center; margin-bottom: 75px; margin-left: 10%;">
+                
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-12">
+            
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Question</th>
+                                        <th class="text-center">Responses</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for (let count = 0; count < questions.length; count++) { %>
+                                        <tr>
+                                            <td><%= questions[count].question %></td>
+                                            <td>
+                                                <a href="/surveys/question/<%= questions[count]._id %>" class="btn btn-outline-info">View Responses</a>
+                                            </td>
+                                        </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        
+        </main>
+    </div>
+
+<!-- Bottom Nav and Footer -->
+<%- include  ../partials/bottom_nav.ejs %>
+
+<%- include  ../partials/footer.ejs %>

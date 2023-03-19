@@ -1,0 +1,63 @@
+<!-- Header and Nav -->
+<%- include partials/header.ejs %>
+
+
+<%- include  partials/main_nav.ejs %>
+
+<main class="container blockquote">
+  <div class="container">
+      <div class="jumbotron shadow-sm">
+
+          <!--contact information-->
+          <h1 class="display-4 text-center page-title">Contact</h1>
+          <br />
+          <div class="text-center">
+              <a href="mailto:">
+                  <p>quarantinecode@my.centennialcollege.ca</p>
+              </a>
+              <p>+1(647)111 1111</p>
+          </div>
+          <hr class="my-4">
+
+          <!--user contact information forum-->
+          <form>
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <label for="firstName">First name</label>
+                      <input type="text" class="form-control shadow-sm" id="firstName">
+                  </div>
+
+                  <div class="form-group col-md-6">
+                      <label for="lastName">Last name</label>
+                      <input type="text" class="form-control shadow-sm" id="lastName">
+                  </div>
+              </div>
+
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <label for="phoneNumber">Phone number</label>
+                      <input type="text" class="form-control shadow-sm" id="contactNumber">
+                  </div>
+
+                  <div class="form-group col-md-6">
+                      <label for="emailAddress">Email address</label>
+                      <input type="email" class="form-control shadow-sm" id="emailAddress" aria-describedby="emailHelp">
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea type="email" class="form-control shadow-sm" id="message" rows="6">
+                      </textarea>
+              </div>
+
+              <button type="button" id="subBtn" class="btn btn-outline-primary mx-auto">Submit</button>
+          </form>
+      </div>
+  </div>
+</main>
+
+<!-- Bottom Nav and Footer -->
+<%- include  partials/bottom_nav.ejs %>
+
+<%- include  partials/footer.ejs %>

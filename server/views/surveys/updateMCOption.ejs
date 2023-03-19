@@ -1,0 +1,27 @@
+<!-- Header and Nav -->
+<%- include ../partials/header.ejs %>
+
+
+<%- include  ../partials/main_nav.ejs %>
+
+    <div class="container">
+        <div class="jumbotron shadow-sm">
+            <div class="header">Edit Option</div>
+            <br>
+            <form class="form blockquote" method="POST" autocomplete="off">
+                <div class="form-wrapper">
+                    <label for="OptionTextField">Option</label>
+                    <input type="text" class="form-control" id="OptionTextField"
+                    placeholder="option" name="question" value="<%= option.option %>" required>
+
+                    <input type="submit" class="btn btn-outline-primary" value="Submit">
+                    <a href="/surveys/update/question/<%= option.questionID %>" class="btn btn-outline-danger">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<!-- Bottom Nav and Footer -->
+<%- include  ../partials/bottom_nav.ejs %>
+
+<%- include  ../partials/footer.ejs %>

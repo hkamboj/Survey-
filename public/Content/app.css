@@ -1,1 +1,119 @@
-/* custom css goes here */
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: linear-gradient(to right,#93a5cf,#e4efe9);
+}
+
+a {
+  color: #00B7FF;
+}
+
+.navbar{
+  background-image: linear-gradient(to right,#29323c, #485563);
+  border: 2px solid #a3bded;
+  border-radius: 15px;
+}
+
+.container1 {
+  height: 100%;
+}
+
+.survey-wrapper{
+  background-color: #FFF;
+  width: 500px;
+  height: 550px;
+  border-radius: 15px;
+  padding: 0 50px;
+  position: relative;
+  left: 50%;
+  top:350px;
+  transform: translate(-50%,-50%);
+}
+
+.register-wrapper{
+  background-color: #FFF;
+  width: 500px;
+  height: 550px;
+  border-radius: 15px;
+  padding: 0 50px;
+  position: relative;
+  left: 50%;
+  top:350px;
+  transform: translate(-50%,-50%);
+}
+
+.register-wrapper .header { 
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 150px;
+}
+
+.register-wrapper .form-wrapper .input-item {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 0;
+  padding: 10px;
+  border-bottom: 1px solid rgb(128, 125, 125);
+  font-size: 15px;
+  outline: none;
+}
+
+.register-wrapper .form-wrapper .input-item::placeholder {
+  text-transform: uppercase;
+}
+
+.register-wrapper .form-wrapper .btn {
+  /* 
+  width: 100%;
+  background-image: linear-gradient(to right,#a6c1ee,#fbc2eb);*/
+  text-align: center;
+  padding: 10px;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
+.login-wrapper{
+  background-color: #FFF;
+  width: 300px;
+  height: 500px;
+  border-radius: 15px;
+  padding: 0 50px;
+  position: relative;
+  left: 50%;
+  top:350px;
+  transform: translate(-50%,-50%);
+}
+
+.login-wrapper .header {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 150px;
+}
+
+.login-wrapper .form-wrapper .input-item {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 0;
+  padding: 10px;
+  border-bottom: 1px solid rgb(128, 125, 125);
+  font-size: 15px;
+  outline: none;
+}
+
+.login-wrapper .form-wrapper .input-item::placeholder {
+  text-transform: uppercase;
+}
+
+.login-wrapper .form-wrapper .btn {
+  /* 
+  width: 100%;
+  background-image: linear-gradient(to right,#a6c1ee,#fbc2eb);*/
+  text-align: center;
+  padding: 10px;
+  margin-top: 30px;
+  border-radius: 5px;
+}

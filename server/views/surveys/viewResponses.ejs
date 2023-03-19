@@ -1,0 +1,67 @@
+<!-- Header and Nav -->
+<%- include ../partials/header.ejs %>
+
+
+<%- include  ../partials/main_nav.ejs %>
+
+    <div id="main-body" class="container-fluid" style="max-width: 100%; text-align: center; margin-bottom: 75px">
+      <main class="container-fluid">
+            <h1 class="display-4" style="text-align: center;">Survey Results</h1>
+            <br>
+    
+            <div id="main-body" class="container-fluid" style="max-width: 80%; text-align: center; margin-bottom: 75px; margin-left: 10%;">
+                
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-12">
+                        
+                        <% if (question.questionType == 'multipleChoice') { %>
+                            <p><%= question.question %></p><br>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"><%= question.question %></th>
+                                            <th class="text-center">Responses</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for (let count = 0; count < responses.length; count++) { %>
+                                            <tr>
+                                                <td><%= responses[count].option %></td>
+                                                <td class="text-center"><%= responses[count].responses %></td>
+                                            </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <% } else { %>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"><%= question.question %></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for (let count = 0; count < responses.length; count++) { %>
+                                            <tr>
+                                                <td><%= responses[count].response %></td>
+                                            </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <% } %>
+                        
+                    </div>
+                </div>
+                <a href="/surveys/<%= question.surveyID %>" class="btn btn-outline-info">Return to Survey</a>
+            </div>
+        
+        </main>
+    </div>
+
+<!-- Bottom Nav and Footer -->
+<%- include  ../partials/bottom_nav.ejs %>
+
+<%- include  ../partials/footer.ejs %>

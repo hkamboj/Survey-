@@ -1,0 +1,44 @@
+<!-- Header and Nav -->
+<%- include ../partials/header.ejs %>
+
+<%- include  ../partials/main_nav.ejs %>
+
+<!-- Login Page Content -->
+<main class="container1">
+<!-- Message Area -->
+<% if(messages.length > 0) {%>
+    <div class="alert alert-danger">
+        <%= messages %>
+    </div>
+<% } %>
+
+<div class="login-wrapper">
+    <div class="header">Please Login</div>
+    <br>
+    <form class="form blockquote" method="POST" autocomplete="off">
+        <div class="form-wrapper">
+            <input type="text" class="input-item" name="username" placeholder="Enter username"
+                id="username" required autofocus>
+
+            <input type="password" class="input-item" name="password" placeholder="Enter password"
+                id="password" required autofocus>
+
+            <h6>
+                or
+                <a href="/register">Register Here</a>
+            </h6>
+
+            <input type="submit" class="btn btn-outline-primary" value="Login">
+            <a href="/" class="">
+                <input type="button" class="btn btn-outline-danger" value="Cancel">
+            </a>
+        </div>
+    </form>
+</div>
+
+</main>
+
+<!-- Bottom Nav and Footer -->
+<%- include  ../partials/bottom_nav.ejs %>
+
+<%- include  ../partials/footer.ejs %>

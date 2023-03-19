@@ -1,0 +1,45 @@
+<!-- Header and Nav -->
+<%- include ../partials/header.ejs %>
+
+
+<%- include  ../partials/main_nav.ejs %>
+
+    <div id="main-body" class="container-fluid" style="max-width: 100%; text-align: center; margin-bottom: 75px">
+      <main class="container-fluid">
+            <h1 class="display-4" style="text-align: center;">Respond to Survey</h1>
+            <h4 class="display-8" style="text-align: center;">share your input</h4>
+            <br>
+    
+            <div id="main-body" class="container-fluid" style="max-width: 80%; text-align: center; margin-bottom: 75px; margin-left: 10%;">
+                
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-12">
+            
+                        <form class="form" method="post">
+                            <div class="form-group">
+                                <% if (question.questionType == 'multipleChoice') { %>
+                                    <p>Question: <br> <%= question.question %></p><br>
+                                    <% for (let count = 0; count < options.length; count++) { %>
+                                        <input type="radio" id="option<%= count %>" name="response" value="<%= options[count].option %>">
+                                        <label for="option<%= count %>"><%= options[count].option %></label><br>
+                                    <% } %>
+                                <% } else { %>
+                                    <label for="reponse">Question: <br> <%= question.question %></label>
+                                    <textarea style="width:100%;" id="response" name="response" rows="8"></textarea>
+                                <% } %>
+                            </div>
+            
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Next </button>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        
+        </main>
+    </div>
+
+<!-- Bottom Nav and Footer -->
+<%- include  ../partials/bottom_nav.ejs %>
+
+<%- include  ../partials/footer.ejs %>

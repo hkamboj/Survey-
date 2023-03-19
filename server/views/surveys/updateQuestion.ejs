@@ -1,0 +1,57 @@
+<!-- Header and Nav -->
+<%- include ../partials/header.ejs %>
+
+
+<%- include  ../partials/main_nav.ejs %>
+
+    <div class="container">
+        <div class="jumbotron shadow-sm">
+            <div class="header">Edit Question</div>
+            <br>
+            <form class="form blockquote" method="POST" autocomplete="off">
+                <div class="form-wrapper">
+                    <label for="QuestionTextField">Question</label>
+                    <input type="text" class="form-control" id="NameTextField"
+                    placeholder="Question" name="question" value="<%= surveyQuestion.question %>" required>
+
+                    <input type="submit" class="btn btn-outline-primary" value="Submit">
+                    <a href="/surveys/update/<%= surveyQuestion.surveyID %>" class="btn btn-outline-danger">Cancel</a>
+                </div>
+            </form>
+
+            <% if (surveyQuestion.questionType == 'multipleChoice') { %>
+            <div>
+                <div class="table-responsive">
+                    <table class="table table-striped table-responsive">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Option</th>
+                                <th class="text-center">Update</th>
+                                <th class="text-center">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for (let count = 0; count < options.length; count++) { %>
+                                <tr>
+                                    <td class="text-center"><%= options[count].option %></td>
+                                    <td class="text-center">
+                                        <a href="/surveys/update/question/option/<%= options[count]._id %>" class="btn btn-outline-info">Edit</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="/surveys/update/question/option/delete/<%= options[count]._id %>" class="btn btn-outline-danger">Delete</a>
+                                    </td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <a href="/surveys/update/question/addoption/<%= surveyQuestion._id %>" class="btn btn-outline-primary">Add Option</a>
+            <% } %>
+        </div>
+    </div>
+
+<!-- Bottom Nav and Footer -->
+<%- include  ../partials/bottom_nav.ejs %>
+
+<%- include  ../partials/footer.ejs %>

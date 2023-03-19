@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">
+    <img src="/assets/images/QCLogoWhite.png" width="150" height="61" alt="" loading="lazy">
+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <% if (title == "Home") { %>
+        <li class="nav-item active">
+        <% } else { %> 
+        <li class="nav-item">
+        <% } %>
+          <a class="nav-link" href="/home"><i class="fas fa-home"></i> Home </a>
+        </li>
+
+        <% if (title == "About") { %>
+        <li class="nav-item active">
+        <% } else { %> 
+        <li class="nav-item">
+        <% } %>
+          <a class="nav-link" href="/about"><i class="fas fa-info-circle"></i> About </a>
+        </li>   
+
+        <% if (title == "Contact") { %>
+        <li class="nav-item active">
+        <% } else { %> 
+        <li class="nav-item">
+        <% } %>
+          <a class="nav-link" href="/contact"><i class="fas fa-phone"></i> Contact </a>
+        </li>
+
+    </ul>
+  </div>
+
+  <!-- right-aligned nav items, related to personal profile -->
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+      <% if (typeof displayName == 'string' && displayName) {%>
+        <li class="nav-item">
+          <span class="navbar-text" style="color:azure"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %> </span>
+        </li>
+        <% if (title == "My Surveys") { %>
+        <li class="nav-item active">
+        <% } else { %>
+        <li class="nav-item">
+        <% } %>
+          <a class="nav-link" href="/mysurveys"> My Surveys </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout"><i class="fas fa-lg fa-sign-out-alt"></i> Logout </a>
+        </li>
+      <% } else { %>
+        <% if (title == "Login") { %>
+        <li class="nav-item active">
+        <% } else { %>
+        <li class="nav-item">
+        <% } %>
+          <a class="nav-link" href="/login"><i class="fas fa-lg fa-sign-in-alt"></i> Login </a>
+        </li>
+      <% } %>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,64 @@
+<!-- Header and Nav -->
+<%- include ../partials/header.ejs %>
+
+
+<%- include  ../partials/main_nav.ejs %>
+<main class="container blockquote">
+  <div class="container">
+    <div class="jumbotron shadow-sm">
+
+      <div class="header">Create Survey</div>
+        <br>
+        <form class="form blockquote" method="POST" autocomplete="off">
+            <div class="form-wrapper">
+                <label for="TitleTextField">Survey Title</label>
+                <input type="text" class="form-control" id="TitleTextField"
+                placeholder="Survey Title" name="title" value="<%= survey.title %>" required>
+    
+                <label for="expiryDate">Survey Open Until</label>
+                <input type="date" class="form-control" id="expiryDate"
+                name="expiryDate" value="<%= survey.expires %>"  required> 
+
+                <input type="submit" class="btn btn-outline-primary" value="Save">
+                <a href="/" class="btn btn-outline-danger">Cancel</a>
+                <a href="/surveys/publish/<%= survey._id %>" class="btn btn-outline-warning">Publish</a>
+            </div>
+        </form>
+
+        <!-- survey question display and add/edit/delete controls -->
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th class="text-center"></th>
+                <th class="text-center"></th>
+                <th class="text-center"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (let count = 0; count < surveyQuestions.length; count++) { %>
+              <tr>
+                <td class="text-center"><%= surveyQuestions[count].question %></td>
+                <td class="text-center">
+                  <a href="/surveys/update/question/<%= surveyQuestions[count]._id %>" class="btn btn-outline-info">Edit</a>
+                </td>
+                <td class="text-center">
+                  <a href="/surveys/update/question/delete/<%= surveyQuestions[count]._id %>" class="btn btn-outline-danger">Delete</a>
+                </td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+
+          <a href="/surveys/update/addquestion/<%= survey._id %>" class="btn btn-outline-primary">Add Short Answer Question</a>
+          <a href="/surveys/update/addmultiplechoice/<%= survey._id %>" class="btn btn-outline-primary">Add Multiple Choice Question</a>
+        </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- Bottom Nav and Footer -->
+<%- include  ../partials/bottom_nav.ejs %>
+
+<%- include  ../partials/footer.ejs %>
